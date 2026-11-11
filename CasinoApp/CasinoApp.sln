@@ -1,6 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasinoApp", "CasinoApp\CasinoApp.csproj", "{5460C44A-FA03-4320-A9E3-E87B16476032}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wallet.Api", "Wallet.Api\Wallet.Api.csproj", "{5460C44A-FA03-4320-A9E3-E87B16476032}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Games.Api", "Games.Api\Games.Api.csproj", "{7038982D-D615-40FA-B5D7-4C381D1D20DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Casino.AppHost", "Casino.AppHost\Casino.AppHost.csproj", "{851B68F2-95B0-49E4-8D44-C734237EA455}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +16,13 @@ Global
 		{5460C44A-FA03-4320-A9E3-E87B16476032}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5460C44A-FA03-4320-A9E3-E87B16476032}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5460C44A-FA03-4320-A9E3-E87B16476032}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7038982D-D615-40FA-B5D7-4C381D1D20DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7038982D-D615-40FA-B5D7-4C381D1D20DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7038982D-D615-40FA-B5D7-4C381D1D20DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7038982D-D615-40FA-B5D7-4C381D1D20DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{851B68F2-95B0-49E4-8D44-C734237EA455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{851B68F2-95B0-49E4-8D44-C734237EA455}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{851B68F2-95B0-49E4-8D44-C734237EA455}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{851B68F2-95B0-49E4-8D44-C734237EA455}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
