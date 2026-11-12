@@ -5,8 +5,8 @@ var postgres = builder.AddPostgres("postgres")
     .WithDataVolume()
     .WithLifetime(ContainerLifetime.Persistent);
 
-var walletDatabase = postgres.AddDatabase("casino-wallet");
-var gamesDatabase = postgres.AddDatabase("casino-games");
+var walletDatabase = postgres.AddDatabase("casino-wallet-db");
+var gamesDatabase = postgres.AddDatabase("casino-games-db");
 
 var gamesApi = builder.AddProject<Projects.Games_Api>("Games-Api")
     .WithReference(gamesDatabase)
