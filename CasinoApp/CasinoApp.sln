@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Games.Api", "Games.Api\Game
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Casino.AppHost", "Casino.AppHost\Casino.AppHost.csproj", "{851B68F2-95B0-49E4-8D44-C734237EA455}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Casino.ServiceDefault", "Casino.ServiceDefault\Casino.ServiceDefault.csproj", "{F92F066B-7C34-4476-A939-7C74DFDEE416}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{851B68F2-95B0-49E4-8D44-C734237EA455}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{851B68F2-95B0-49E4-8D44-C734237EA455}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{851B68F2-95B0-49E4-8D44-C734237EA455}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F92F066B-7C34-4476-A939-7C74DFDEE416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F92F066B-7C34-4476-A939-7C74DFDEE416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F92F066B-7C34-4476-A939-7C74DFDEE416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F92F066B-7C34-4476-A939-7C74DFDEE416}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

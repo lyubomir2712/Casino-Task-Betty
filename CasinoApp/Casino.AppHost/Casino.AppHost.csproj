@@ -14,4 +14,8 @@
       <ProjectReference Include="..\Wallet.Api\Wallet.Api.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Aspire.Hosting.PostgreSQL" />
+    </ItemGroup>
+
 </Project>

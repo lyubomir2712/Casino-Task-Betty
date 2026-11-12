@@ -1,4 +1,22 @@
 var builder = DistributedApplication.CreateBuilder(args);
-builder.AddProject<Projects.Games_Api>("Games-Api");
-builder.AddProject<Projects.Wallet_Api>("Wallet-Api");
-    builder.Build().Run();
+
+var postgres = builder.AddPostgres("postgres")
+    .WithHostPort(5432)
+    .WithDataVolume()
+    .WithLifetime(ContainerLifetime.Persistent);
+
+var walletDatabase = postgres.AddDatabase("casino-wallet");
+var gamesDatabase = postgres.AddDatabase("casino-games");
+
+var gamesApi = builder.AddProject<Projects.Games_Api>("Games-Api")
+    .WithReference(gamesDatabase)
+    .WaitFor(gamesDatabase);
+
+var walletApi = builder.AddProject<Projects.Wallet_Api>("Wallet-Api")
+    .WithHttpsEndpoint(5001, name: "public")
+    .WithReference(walletDatabase)
+    .WithReference(gamesApi)
+    .WaitFor(walletDatabase)
+    .WaitFor(gamesApi);
+
+builder.Build().Run();
