@@ -12,6 +12,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Games.Api\Games.Api.csproj" />
       <ProjectReference Include="..\Wallet.Api\Wallet.Api.csproj" />
+      <ProjectReference Include="..\Casino.Gateway\Casino.Gateway.csproj" />
     </ItemGroup>
 
     <ItemGroup>
