@@ -19,4 +19,11 @@
       <ProjectReference Include="..\Casino.ServiceDefault\Casino.ServiceDefault.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Domain\" />
+      <Folder Include="Features\" />
+      <Folder Include="Infrastructure\" />
+      <Folder Include="Persistance\" />
+    </ItemGroup>
+
 </Project>
