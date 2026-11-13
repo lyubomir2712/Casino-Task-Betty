@@ -1,4 +1,4 @@
-using CasinoApp.Data;
+using CasinoApp.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
