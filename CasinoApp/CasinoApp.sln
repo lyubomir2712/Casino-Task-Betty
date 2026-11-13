@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Casino.Gateway", "Casino.Gateway\Casino.Gateway.csproj", "{FB07EE58-D6C5-4244-9763-36626D339122}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{AF2F2122-9248-484E-A16D-D651C59E8A4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -94,6 +96,18 @@ Global
 		{FB07EE58-D6C5-4244-9763-36626D339122}.Release|x64.Build.0 = Release|Any CPU
 		{FB07EE58-D6C5-4244-9763-36626D339122}.Release|x86.ActiveCfg = Release|Any CPU
 		{FB07EE58-D6C5-4244-9763-36626D339122}.Release|x86.Build.0 = Release|Any CPU
+		{AF2F2122-9248-484E-A16D-D651C59E8A4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF2F2122-9248-484E-A16D-D651C59E8A4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF2F2122-9248-484E-A16D-D651C59E8A4E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AF2F2122-9248-484E-A16D-D651C59E8A4E}.Debug|x64.Build.0 = Debug|Any CPU
+		{AF2F2122-9248-484E-A16D-D651C59E8A4E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AF2F2122-9248-484E-A16D-D651C59E8A4E}.Debug|x86.Build.0 = Debug|Any CPU
+		{AF2F2122-9248-484E-A16D-D651C59E8A4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF2F2122-9248-484E-A16D-D651C59E8A4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF2F2122-9248-484E-A16D-D651C59E8A4E}.Release|x64.ActiveCfg = Release|Any CPU
+		{AF2F2122-9248-484E-A16D-D651C59E8A4E}.Release|x64.Build.0 = Release|Any CPU
+		{AF2F2122-9248-484E-A16D-D651C59E8A4E}.Release|x86.ActiveCfg = Release|Any CPU
+		{AF2F2122-9248-484E-A16D-D651C59E8A4E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
