@@ -1,4 +1,4 @@
-using Games.Api.Data;
+using Games.Api.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

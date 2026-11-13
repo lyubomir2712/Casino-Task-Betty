@@ -26,7 +26,7 @@
     <ItemGroup>
       <Folder Include="Features\" />
       <Folder Include="Infrastructure\" />
-      <Folder Include="Persistance\" />
+      <Folder Include="Persistence\Migrations\" />
     </ItemGroup>
 
 </Project>
