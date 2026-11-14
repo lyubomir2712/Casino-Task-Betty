@@ -1,3 +1,4 @@
+using CasinoApp.Features.Players;
 using CasinoApp.Persistence;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +10,8 @@ builder.Services.AddDbContext<WalletDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("casino-wallet-db")));
 builder.EnrichNpgsqlDbContext<WalletDbContext>();
 
+builder.Services.AddSingleton(TimeProvider.System);
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -19,7 +22,9 @@ if (app.Environment.IsDevelopment())
     var dbContext = scope.ServiceProvider.GetRequiredService<WalletDbContext>();
     dbContext.Database.Migrate();
 }
-app.MapGet("/players/ping", () => "wallet ok");
+
+GetOrCreatePlayer.Map(app);
+
 app.UseHttpsRedirection();
 
 app.Run();
