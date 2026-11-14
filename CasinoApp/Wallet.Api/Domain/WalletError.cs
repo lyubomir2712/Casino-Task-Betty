@@ -3,7 +3,10 @@ namespace CasinoApp.Domain;
 public enum WalletError
 {
     InvalidAmount,
-    InsufficientFunds
+    InsufficientFunds,
+    PlayerNotFound,
+    IdempotencyKeyReused,
+    ConcurrencyConflict
 }
 
 public readonly record struct Result<T>(T? Value, WalletError? Error)

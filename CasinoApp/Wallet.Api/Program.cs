@@ -1,4 +1,8 @@
+using CasinoApp.Features.Deposit;
+using CasinoApp.Features.GetBalance;
 using CasinoApp.Features.Players;
+using CasinoApp.Features.SettleRound;
+using CasinoApp.Features.Withdraw;
 using CasinoApp.Persistence;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,6 +28,10 @@ if (app.Environment.IsDevelopment())
 }
 
 GetOrCreatePlayer.Map(app);
+Deposit.Map(app);
+Withdraw.Map(app);
+GetBalance.Map(app);
+SettleRound.Map(app);
 
 app.UseHttpsRedirection();
 
