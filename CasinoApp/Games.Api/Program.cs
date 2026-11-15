@@ -1,8 +1,11 @@
 using Casino.ServiceDefault;
 using Games.Api.Domain;
+using Games.Api.Features.Common;
+using Games.Api.Features.GetRound;
 using Games.Api.Features.PlaceBet;
 using Games.Api.Infrastructure.Random;
 using Games.Api.Infrastructure.Wallet;
+using Games.Api.Infrastructure.Workers;
 using Games.Api.Persistence;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,6 +27,8 @@ builder.Services.AddHttpClient("WalletApi", client =>
 builder.Services.AddSingleton(TimeProvider.System);
 builder.Services.AddSingleton<IRandomSource, CryptoRandomSource>();
 builder.Services.AddSingleton<OutcomeCalculator>();
+builder.Services.AddScoped<RoundSettler>();
+builder.Services.AddHostedService<PendingRoundsWorker>();
 builder.Services.AddHttpClient<WalletClient>(client =>
     client.BaseAddress = new Uri("https+http://Wallet-Api"));
 
@@ -39,6 +44,7 @@ if (app.Environment.IsDevelopment())
 }
 
 PlaceBet.Map(app);
+GetRound.Map(app);
 
 app.UseHttpsRedirection();
 

@@ -1,4 +1,5 @@
 using Games.Api.Domain;
+using Games.Api.Features.Common;
 using Games.Api.Infrastructure.Wallet;
 using Games.Api.Persistence;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -18,7 +19,7 @@ public static class PlaceBet
         Request request,
         GamesDbContext db,
         OutcomeCalculator calculator,
-        WalletClient wallet,
+        RoundSettler settler,
         TimeProvider time,
         CancellationToken ct)
     {
@@ -32,30 +33,8 @@ public static class PlaceBet
         db.Rounds.Add(round);
         await db.SaveChangesAsync(ct);
 
-        var settle = await wallet.SettleRoundAsync(round, ct);
-
-        switch (settle.Status)
-        {
-            case SettleStatus.Settled:
-                round.MarkSettled(settle.BalanceCents, time.GetUtcNow());
-                break;
-            case SettleStatus.Rejected:
-                round.MarkRejected(time.GetUtcNow());
-                break;
-            case SettleStatus.Unavailable:
-                return TypedResults.Accepted($"/bets/{round.Id}", ToResponse(round));
-        }
-
-        try
-        {
-            await db.SaveChangesAsync(ct);
-        }
-        catch (DbUpdateConcurrencyException)
-        {
-            db.ChangeTracker.Clear();
-            round = await db.Rounds.AsNoTracking().SingleAsync(r => r.Id == round.Id, ct);
-        }
-
+        round = await settler.SettleAsync(round, ct);
+        
         return round.Status switch
         {
             RoundStatus.Settled  => TypedResults.Ok(ToResponse(round)),
@@ -64,7 +43,7 @@ public static class PlaceBet
         };
     }
 
-    private static Response ToResponse(Round round) => new(
+    internal static Response ToResponse(Round round) => new(
         round.Id,
         round.Status.ToString(),
         Money.ToDollars(round.BetCents),
