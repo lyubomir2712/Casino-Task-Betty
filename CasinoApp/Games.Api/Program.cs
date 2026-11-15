@@ -1,7 +1,14 @@
+using Casino.ServiceDefault;
+using Games.Api.Domain;
+using Games.Api.Features.PlaceBet;
+using Games.Api.Infrastructure.Random;
+using Games.Api.Infrastructure.Wallet;
 using Games.Api.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.AddServiceDefaults();
 
 builder.Services.AddOpenApi();
 
@@ -11,8 +18,14 @@ builder.EnrichNpgsqlDbContext<GamesDbContext>();
 
 builder.Services.AddHttpClient("WalletApi", client =>
 {
-    client.BaseAddress = new Uri("https+http://wallet-api");
+    client.BaseAddress = new Uri("https+http://Wallet-Api");
 });
+
+builder.Services.AddSingleton(TimeProvider.System);
+builder.Services.AddSingleton<IRandomSource, CryptoRandomSource>();
+builder.Services.AddSingleton<OutcomeCalculator>();
+builder.Services.AddHttpClient<WalletClient>(client =>
+    client.BaseAddress = new Uri("https+http://Wallet-Api"));
 
 var app = builder.Build();
 
@@ -24,6 +37,8 @@ if (app.Environment.IsDevelopment())
     var dbContext = scope.ServiceProvider.GetRequiredService<GamesDbContext>();
     dbContext.Database.Migrate();
 }
+
+PlaceBet.Map(app);
 
 app.UseHttpsRedirection();
 
