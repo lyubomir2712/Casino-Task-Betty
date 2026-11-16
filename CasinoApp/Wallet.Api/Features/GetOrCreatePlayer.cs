@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 
-namespace CasinoApp.Features.Players;
+namespace CasinoApp.Features;
 
 public static class GetOrCreatePlayer
 {

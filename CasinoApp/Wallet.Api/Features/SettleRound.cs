@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 
-namespace CasinoApp.Features.SettleRound;
+namespace CasinoApp.Features;
 
 public static class SettleRound
 {

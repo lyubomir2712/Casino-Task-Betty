@@ -4,10 +4,10 @@ using CasinoApp.Persistence;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CasinoApp.Features.Withdraw;
+namespace CasinoApp.Features;
 
 public class Withdraw
-{
+{ 
     public sealed record Request(decimal Amount);                                                                     
 public sealed record Response(decimal Amount, decimal Balance);                                                   
                                                                                                                   

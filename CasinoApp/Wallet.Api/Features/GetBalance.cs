@@ -4,7 +4,7 @@ using CasinoApp.Persistence;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
-namespace CasinoApp.Features.GetBalance;
+namespace CasinoApp.Features;
 
 public static class GetBalance
 {

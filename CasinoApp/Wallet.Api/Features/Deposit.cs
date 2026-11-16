@@ -4,7 +4,7 @@ using CasinoApp.Persistence;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CasinoApp.Features.Deposit;
+namespace CasinoApp.Features;
 
 public static class Deposit
 {
