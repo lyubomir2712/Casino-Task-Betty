@@ -1,17 +1,8 @@
 using System.Net.Http.Json;
 using System.Text.Json;
+using Client.Dtos;
 
-namespace Client;
-
-public sealed record PlayerDto(Guid PlayerId, string Name, decimal Balance);
-public sealed record MoneyDto(decimal Amount, decimal Balance);
-public sealed record BalanceDto(Guid PlayerId, decimal Balance);
-public sealed record RoundDto(Guid RoundId, string Status, decimal Bet, decimal Win, decimal? Balance);
-
-public sealed record ApiResult<T>(T? Value, int StatusCode, string? Error)
-{
-    public bool IsSuccess => Error is null;
-}
+namespace Casino.Client;
 
 public sealed class CasinoApiClient(HttpClient http)
 {
@@ -38,7 +29,6 @@ public sealed class CasinoApiClient(HttpClient http)
     public Task<ApiResult<BalanceDto>> GetBalanceAsync(Guid playerId, CancellationToken ct = default) =>
         SendAsync<BalanceDto>(() => new HttpRequestMessage(HttpMethod.Get, $"api/players/{playerId}/balance"), retry: true, ct);
 
-    // No automatic retry: a bet request carries no idempotency key, so resending could create a second round
     public Task<ApiResult<RoundDto>> PlaceBetAsync(Guid playerId, decimal amount, CancellationToken ct = default) =>
         SendAsync<RoundDto>(() => Post("api/bets", new { playerId, amount }), retry: false, ct);
 

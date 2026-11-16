@@ -1,6 +1,6 @@
 using System.Globalization;
 
-namespace Client;
+namespace Casino.Client;
 
 public static class MoneyFormat
 {

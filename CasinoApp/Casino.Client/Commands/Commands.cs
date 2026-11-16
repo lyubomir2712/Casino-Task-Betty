@@ -1,6 +1,6 @@
 using System.Globalization;
 
-namespace Client;
+namespace Casino.Client.Commands;
 
 public abstract record Command
 {

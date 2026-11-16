@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Casino.AppHost", "Casino.Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Casino.ServiceDefault", "Casino.ServiceDefault\Casino.ServiceDefault.csproj", "{F92F066B-7C34-4476-A939-7C74DFDEE416}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{302D58E0-159F-4D3D-91D1-4BB368630793}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Casino.Client", "Casino.Client\Casino.Client.csproj", "{302D58E0-159F-4D3D-91D1-4BB368630793}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Casino.Gateway", "Casino.Gateway\Casino.Gateway.csproj", "{FB07EE58-D6C5-4244-9763-36626D339122}"
 EndProject

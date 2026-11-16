@@ -1,4 +1,7 @@
-namespace Client;
+using Client;
+using Client.Dtos;
+
+namespace Casino.Client;
 
 public sealed class GameSession(CasinoApiClient api, Guid playerId)
 {

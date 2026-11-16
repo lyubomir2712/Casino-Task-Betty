@@ -1,4 +1,6 @@
-﻿using Client;
+﻿using Casino.Client;
+using Casino.Client.Commands;
+using Client.Dtos;
 
 var gatewayUrl = args.FirstOrDefault()
                  ?? Environment.GetEnvironmentVariable("CASINO_GATEWAY_URL")
@@ -27,7 +29,7 @@ while (true)
 {
     Console.Write("> ");
     var input = Console.ReadLine();
-    if (input is null) break;   // input stream closed (e.g. Ctrl+D)
+    if (input is null) break;
 
     var command = Command.Parse(input);
 
