@@ -1,4 +1,5 @@
 using Games.Api.Domain;
+using Games.Api.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

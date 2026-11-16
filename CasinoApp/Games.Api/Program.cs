@@ -1,5 +1,7 @@
 using Casino.ServiceDefault;
 using Games.Api.Domain;
+using Games.Api.Domain.Interfaces;
+using Games.Api.Domain.Rules;
 using Games.Api.Features.Common;
 using Games.Api.Features.GetRound;
 using Games.Api.Features.PlaceBet;

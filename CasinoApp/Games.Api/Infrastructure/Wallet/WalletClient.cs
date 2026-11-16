@@ -1,5 +1,6 @@
 using System.Net;
 using Games.Api.Domain;
+using Games.Api.Domain.Entities;
 using Polly.CircuitBreaker;
 using Polly.Timeout;
 

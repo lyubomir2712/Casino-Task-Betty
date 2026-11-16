@@ -1,4 +1,5 @@
 using Games.Api.Domain;
+using Games.Api.Domain.Enums;
 using Games.Api.Features.Common;
 using Games.Api.Persistence;
 using Microsoft.EntityFrameworkCore;

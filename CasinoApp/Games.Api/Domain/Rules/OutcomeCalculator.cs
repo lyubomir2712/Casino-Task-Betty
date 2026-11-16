@@ -1,4 +1,6 @@
-namespace Games.Api.Domain;
+using Games.Api.Domain.Interfaces;
+
+namespace Games.Api.Domain.Rules;
 
 public sealed class OutcomeCalculator(IRandomSource random)
 {

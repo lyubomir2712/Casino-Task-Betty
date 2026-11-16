@@ -1,4 +1,7 @@
 using Games.Api.Domain;
+using Games.Api.Domain.Entities;
+using Games.Api.Domain.Enums;
+using Games.Api.Domain.Rules;
 using Games.Api.Features.Common;
 using Games.Api.Infrastructure.Wallet;
 using Games.Api.Persistence;

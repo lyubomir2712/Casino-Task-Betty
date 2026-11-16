@@ -1,4 +1,8 @@
-namespace Games.Api.Domain;
+using Games.Api.Domain.Enums;
+using Games.Api.Domain.Errors;
+using Games.Api.Domain.Rules;
+
+namespace Games.Api.Domain.Entities;
 
 public sealed class Round
 {

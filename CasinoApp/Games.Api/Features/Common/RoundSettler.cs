@@ -1,4 +1,5 @@
 using Games.Api.Domain;
+using Games.Api.Domain.Entities;
 using Games.Api.Infrastructure.Wallet;
 using Games.Api.Persistence;
 using Microsoft.EntityFrameworkCore;

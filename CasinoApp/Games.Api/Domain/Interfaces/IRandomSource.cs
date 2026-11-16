@@ -1,4 +1,4 @@
-namespace Games.Api.Domain;
+namespace Games.Api.Domain.Interfaces;
 
 public interface IRandomSource
 {

@@ -1,5 +1,6 @@
 using System.Security.Cryptography;
 using Games.Api.Domain;
+using Games.Api.Domain.Interfaces;
 
 namespace Games.Api.Infrastructure.Random;
 
