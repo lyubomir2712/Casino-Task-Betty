@@ -64,11 +64,21 @@ Thank you for playing! Hope to see you again soon.
        games db                     wallet db       (one Postgres container, two databases)
 ```
 
-**Wallet** is the only source of truth for money. It owns players and accounts, and every balance change is an entry in an append-only ledger. It knows nothing about games.
+- **Wallet** is the only source of truth for money. It owns players and accounts, and every balance change is an entry in an append-only ledger. It knows nothing about games.
 
-**Games** owns the game rules (bet limits, outcome distribution) and the rounds. It never stores balances. It asks Wallet to settle each round.
+- **Games** owns the game rules (bet limits, outcome distribution) and the rounds. It never stores balances. It asks Wallet to settle each round.
 
-**Gateway** is the single entry point for the client. It routes only the public endpoints. The internal settle-round endpoint is not routed, so the client cannot credit itself winnings.
+- **Gateway** is the single entry point for the client. It routes only the public endpoints. The internal settle-round endpoint is not routed, so the client cannot credit itself winnings.
+
+- **.NET Aspire** runs everything locally and provides service discovery, Postgres, retries/timeouts (Polly) and OpenTelemetry.
+
+## How a round works
+
+1. Games validates the bet, **decides the outcome**, and saves the round as **Pending**, before any money moves.
+2. Games makes **one** call to Wallet, which debits the bet and credits the win **atomically in one transaction**, or rejects the round if the balance is too low.
+3. Games marks the round **Settled** or **Rejected** and returns the new balance.
+
+**When something fails** (Wallet times out, errors, or Games crashes mid-bet), the round stays Pending and the client gets `202 Accepted`. A background worker in Games retries Pending rounds every few seconds. Retrying is always safe: Wallet uses the `roundId` as an idempotency key, so a round is settled exactly once, and the stored outcome means a retry can never "re-roll" it.
 
 ## Screenshots
 
