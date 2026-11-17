@@ -69,3 +69,10 @@ Thank you for playing! Hope to see you again soon.
 **Games** owns the game rules (bet limits, outcome distribution) and the rounds. It never stores balances. It asks Wallet to settle each round.
 
 **Gateway** is the single entry point for the client. It routes only the public endpoints. The internal settle-round endpoint is not routed, so the client cannot credit itself winnings.
+
+## Screenshots
+
+<img width="3452" height="2156" alt="image" src="https://github.com/user-attachments/assets/710b368f-75da-4431-a762-dfac286c43ab" />
+<img width="3452" height="2156" alt="image" src="https://github.com/user-attachments/assets/90c0eab9-cf3c-427e-8087-cbf48fbde5f0" />
+
+
